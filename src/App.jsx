@@ -1,12 +1,14 @@
 import { useEffect } from "react";
+import axios from "axios"
 
 function App(){
+  const getData = async () => {
+    const users = await axios.get('http://localhost:5000/users')
+
+    console.log(users.data);
+  }
   useEffect(() => {
-    fetch("/users").then(
-      res => res.json()
-    ).then(
-      data => console.log(data)
-    )
+    getData()
   }, []);
   return(
     <div className="App">
