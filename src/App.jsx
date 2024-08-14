@@ -1,5 +1,9 @@
 import { useEffect } from "react";
 import axios from "axios"
+import { BrowserRouter } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
+import MainPage from './pages/MainPage'
 
 function App(){
   const getData = async () => {
@@ -11,9 +15,11 @@ function App(){
     getData()
   }, []);
   return(
-    <div className="App">
-
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
