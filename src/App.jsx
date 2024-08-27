@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 import axios from "axios"
-import { BrowserRouter } from "react-router-dom";
-import { Routes } from "react-router-dom";
-import { Route } from "react-router-dom";
-import MainPage from './pages/MainPage'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import loadable from '@loadable/component';
 
 function App(){
   const getData = async () => {
@@ -14,10 +12,16 @@ function App(){
   useEffect(() => {
     getData()
   }, []);
+
+  const Main = loadable(() => import("./pages/MainPage"));
+  const Login = loadable(() => import("./pages/LoginPage"));
+  const Regsiter = loadable(() => import("./pages/RegisterPage"));
   return(
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route path="/" element={<Main />} loader={Main.load} />
+        <Route path="/login" element={<Login />} loader={Login.load} />
+        <Route path="/register" element={<Regsiter />}  loader={Regsiter.load} />
       </Routes>
     </BrowserRouter>
   )
