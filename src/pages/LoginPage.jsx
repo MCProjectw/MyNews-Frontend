@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { loginUser } from "../../../_actions/user_action";
-import Auth from "../../../hoc/auth";
+import { loginUser } from "../actions/user_action";
+import Auth from "../hoc/auth";
 import styled from "styled-components";
 import axios from "axios";
 

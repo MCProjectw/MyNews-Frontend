@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { registerUser } from "../../../_actions/user_action";
-import Auth from "../../../hoc/auth";
+import { registerUser } from "../actions/user_action";
+import Auth from "../hoc/auth";
 
 function RegisterPage() {
   const [email, setEmail] = useState("");

@@ -1,9 +1,9 @@
-import axios from "axios"
+import axios from "axios";
 import { AUTH_USER, LOGIN_USER, REGISTER_USER } from "./type";
 
 const login_user = (dataToSubmit) => {
     const request = axios
-    .post("/api/user/1", dataToSubmit)
+    .post("/api/user/login", dataToSubmit)
     .then((res) => res.data);
 
     return {
