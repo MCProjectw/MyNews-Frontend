@@ -1,37 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import reportWebVitals from './reportWebVitals';
-import App from "./App";
-import { Provider } from "react-redux";
-import { applyMiddleware, createStore } from "redux";
-import { thunk } from "redux-thunk";
-import promiseMiddleware from "redux-promise"; // promise를 사용하기 위한 미들웨어
-import Reducer from "./reducer/index";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css';
 
-
-
-// 원래 store는 객체밖에 못받기 때문에 promise와 function을 사용하기 위해 미들웨어를 사용한다.
-const createStoreWithMiddleware = applyMiddleware(
-  thunk,
-  promiseMiddleware,
-)(createStore);
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Provider
-      store={createStoreWithMiddleware(
-        Reducer,
-        window.__REDUX_DEVTOOLS_EXTENSION__ &&
-          window.__REDUX_DEVTOOLS_EXTENSION__()
-      )}
-    >
-      <App />
-    </Provider>
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <App />
+  </React.StrictMode>,
+)

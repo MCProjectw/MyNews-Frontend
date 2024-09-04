@@ -10,10 +10,10 @@ const Logo = () => {
 
 const Container = styled.div``;
 const StyledImage = styled.div`
-    background-image: url("Logo.png");
+    background-image: url("./images/Logo.png");
     background-size: cover;
     background-repeat: no-repeat;
-    width: 200px;
-    height: 250px;
+    width: 165px;
+    height: 160px;
 `;
 export default Logo;
