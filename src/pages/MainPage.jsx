@@ -1,13 +1,23 @@
 import styled from "styled-components";
-import Menu from "../components/Menu/Menu"
+import Logo from "../icon/Logo";
+// import { Link } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import * as fa from "@fortawesome/free-solid-svg-icons";
 
 const MainPage = () => {
     return(
         <Container>
-            <Menu />
+            <Logo />
+            <Icon icon="fa-sharp fa-solid fa-bell" />
         </Container>
     )
 }
 
-const Container = styled.div``;
-export default Menu;
+const Container = styled.div`
+    background-color: #333;
+    width: 100vw;
+    height: 100vh;
+`;
+// const Icon = styled(FontAwesomeIcon)``;
+export default MainPage;

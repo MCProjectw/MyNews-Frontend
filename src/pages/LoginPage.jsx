@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../_actions/user_action";
 import Auth from "../../../hoc/auth";
 import styled from "styled-components";
+import axios from "axios";
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -12,6 +13,15 @@ function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const getData = async () => {
+    const loginUser = await axios.get("http://localhost:3000/login");
+
+    console.log(loginUser.data);
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
   const handleChange = (e) => {
     const { value, type } = e.target;
     if (type === "email") setEmail(value);

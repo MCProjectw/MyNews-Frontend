@@ -3,7 +3,7 @@ import { AUTH_USER, LOGIN_USER, REGISTER_USER } from "./type";
 
 const login_user = (dataToSubmit) => {
     const request = axios
-    .post("/api/user/login", dataToSubmit)
+    .post("/api/user/1", dataToSubmit)
     .then((res) => res.data);
 
     return {
