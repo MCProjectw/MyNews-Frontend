@@ -8,16 +8,16 @@ const MainPage = () => {
         <Container>
             <StyledContent>
                 <Logo />
-                <StyledIsBtn>
-                    <StyledLoginInput>로그인</StyledLoginInput>
-                    <StyledRegisterInput>회원가입</StyledRegisterInput>
-                </StyledIsBtn>
-                <StyledContent>
+                <StyledContainer>
                     <MainBtn>주요기능</MainBtn>
                     <SecondBtn>기술실현</SecondBtn>
                     <ThirdBtn>기대효과</ThirdBtn>
                     <FeedbackBtn>문의 및 피드백</FeedbackBtn>
-                </StyledContent>
+                </StyledContainer>
+                <StyledIsBtn>
+                    <StyledLoginInput>로그인</StyledLoginInput>
+                    <StyledRegisterInput>회원가입</StyledRegisterInput>
+                </StyledIsBtn>
             </StyledContent>
         </Container>
     )
@@ -49,6 +49,7 @@ const StyledLoginInput = styled.button`
     border: none;
     background-color: #FFE500;
     font-size: 15px;
+    cursor: pointer;
 `;
 const StyledRegisterInput = styled.button`
     padding: 10px 15px;
@@ -57,11 +58,37 @@ const StyledRegisterInput = styled.button`
     background-color: #2a2a2a;
     color: #FFE500;
     font-size: 15px;
+    cursor: pointer;
 `;
-const StyledContianer = styled.div``;
-const MainBtn = styled.div``;
+const StyledContainer = styled.div`
+    display: flex;
+    gap: 2.5em;
+    position: absolute;
+    left: 15%;
+    top: 40%;
+`;
+const MainBtn = styled.div`
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+`;
 const SecondBtn = styled.div`
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
 `;
-const ThirdBtn = styled.div``;
-const FeedbackBtn = styled.div``;
+const ThirdBtn = styled.div`
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+`;
+const FeedbackBtn = styled.div`
+    font-size: 25px;
+    font-weight: bold ;
+    color: #fff;
+    cursor: pointer;
+`;
 export default MainPage;
