@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import Logo from "../icon/Logo";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import * as fa from "@fortawesome/free-solid-svg-icons";
 
 const MainPage = () => {
     return (
@@ -19,18 +17,32 @@ const MainPage = () => {
                     <StyledRegisterInput>회원가입</StyledRegisterInput>
                 </StyledIsBtn>
             </StyledContent>
+            <StyledTimeText>
+                시간과 노력을 절약하는 지역 <br />
+                맞춤 뉴스
+            </StyledTimeText>
         </Container>
     )
 }
 
 const Container = styled.div`
-    height: 178px;
-    background-color: #2a2a2a;
+    background-image: url("./images/image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    filter: brightness();
 `;
-// const Icon = styled(FontAwesomeIcon)``;
+const StyledTimeText = styled.div`
+    height: 80vh;
+    color: #FFE500;
+    font-size: 50px;
+    font-weight: bold;
+`;
 const StyledContent = styled.div`
-    width: 95%;
-    height: 178px;
+    background-color: #2a2a2a;
+    /* width: 95%; */
+    height: 130px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -40,8 +52,8 @@ const StyledIsBtn = styled.div`
     display: flex;
     gap: 10px;
     position: absolute;
-    top: 40%;
-    right: 0%;
+    top: 30%;
+    right: 2%;
 `;
 const StyledLoginInput = styled.button`
     padding: 15px 25px;
@@ -68,25 +80,25 @@ const StyledContainer = styled.div`
     top: 40%;
 `;
 const MainBtn = styled.div`
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold;
     color: #fff;
     cursor: pointer;
 `;
 const SecondBtn = styled.div`
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold;
     color: #fff;
     cursor: pointer;
 `;
 const ThirdBtn = styled.div`
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold;
     color: #fff;
     cursor: pointer;
 `;
 const FeedbackBtn = styled.div`
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold ;
     color: #fff;
     cursor: pointer;
