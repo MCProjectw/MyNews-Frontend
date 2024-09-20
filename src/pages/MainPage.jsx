@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Logo from "../icon/Logo";
+import { Link } from "react-router-dom";
 
 const MainPage = () => {
     return (
@@ -13,8 +14,8 @@ const MainPage = () => {
                     <FeedbackBtn>문의 및 피드백</FeedbackBtn>
                 </StyledContainer>
                 <StyledIsBtn>
-                    <StyledLoginInput>로그인</StyledLoginInput>
-                    <StyledRegisterInput>회원가입</StyledRegisterInput>
+                    <StyledLoginInput to="/login">로그인</StyledLoginInput>
+                    <StyledRegisterInput to="/register">회원가입</StyledRegisterInput>
                 </StyledIsBtn>
             </StyledContent>
             <StyledTimeText>
@@ -55,20 +56,23 @@ const StyledIsBtn = styled.div`
     top: 30%;
     right: 2%;
 `;
-const StyledLoginInput = styled.button`
+const StyledLoginInput = styled(Link)`
     padding: 15px 25px;
     border-radius: 5px;
     border: none;
     background-color: #FFE500;
     font-size: 15px;
+    text-decoration: none;
+    color: inherit;
     cursor: pointer;
 `;
-const StyledRegisterInput = styled.button`
-    padding: 10px 15px;
+const StyledRegisterInput = styled(Link)`
+    padding: 13px 15px;
     border-radius: 5px;
     border: 1px solid #FFE500;
     background-color: #2a2a2a;
     color: #FFE500;
+    text-decoration: none;
     font-size: 15px;
     cursor: pointer;
 `;
