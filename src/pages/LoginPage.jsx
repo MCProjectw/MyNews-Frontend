@@ -12,7 +12,7 @@ const LoginPage = () => {
     // useState로 email, password 상태 관리
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");  // password 오타 수정
-    const [error, setError] = useState("");        // 에러 메시지 상태 추가
+    const [error, setError] = useState(null);        // 에러 메시지 상태 추가
 
     // input 핸들링 함수
     const handleChange = (e) => {
@@ -31,9 +31,10 @@ const LoginPage = () => {
             const response = await dispatch(loginUser(body)); // loginUser Redux action 호출
             if (response.payload.loginSuccess) {
                 // 로그인 성공 시 메인 페이지로 이동
+                localStorage.setItem("token", response.payload.token);
                 navigate("/");
             } else {
-                setError("아이디 또는 비밀번호가 올바르지 않습니다.");
+                setError(response.payload.message  || "아이디 또는 비밀번호가 올바르지 않습니다.");
             }
         } catch (err) {
             // 서버나 네트워크 오류 처리
