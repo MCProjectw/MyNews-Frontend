@@ -1,8 +1,22 @@
 import styled from "styled-components";
 import Logo from "../icon/Logo";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const MainPage = () => {
+    const [animate, setAnimate] = useState(0);
+
+    const intervalAnimate = (e) => {
+        e.preventDefault();
+        let isAnimate = 0;
+        [...animate];
+        animate = (isAnimate + 1) % animate.valueOf();
+    }
+    setInterval((e) => {
+        setAnimate + intervalAnimate();
+        e.target.value();
+        intervalAnimate();
+    }, 2000);
     return (
         <Container>
             <StyledContent>
