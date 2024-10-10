@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Logo from "../icon/Logo";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 const MainPage = () => {
     return (
