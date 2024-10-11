@@ -1,21 +1,9 @@
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import Logo from "../icon/Logo";
+import Nav from "../components/Nav/Nav";
 
 const MainPage = () => {
-    const clickSum = document.querySelectorAll("#sum");
-
-    clickSum.forEach(isClick => {
-        isClick.addEventListener("click", (e) => {
-            e.preventDefault();
-            if(clickSum) {
-                e.classList.add("active");
-            } else {
-                e.classList.remove("active");
-            }
-            isClick.style.textDecoration = "Underline";
-        });
-    });
     return(
         <Container>
             <StyledHeader>
@@ -26,12 +14,8 @@ const MainPage = () => {
                     <RegisterBtn to="/register">회원가입</RegisterBtn>   
                 </Content>
             </StyledHeader>
-            <StyledNav>
-                <div id="sum" className="active" style={{cursor: "pointer"}}>최근이슈</div>
-                <div id="sum" style={{cursor: "pointer"}}>사회정보</div>
-                <div id="sum" style={{cursor: "pointer"}}>이달의 정보</div>
-                <div id="sum" style={{cursor: "pointer"}}>블로그</div>
-            </StyledNav>
+            <Nav />
+
         </Container>
     )
 }
@@ -71,15 +55,5 @@ const RegisterBtn = styled(Link)`
     border-radius: 6px;
     color: #1D99FF;
     font-weight: bold;
-`;
-const StyledNav = styled.div` 
-    border-top: 1px solid #D5D5D5;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    font-weight: bold;
-    gap: 5rem;
-    padding-left: 15em;
 `;
 export default MainPage;
