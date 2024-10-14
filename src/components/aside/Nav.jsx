@@ -1,15 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const Nav = () => {
-    const [activeIndex, setActiveIndex] = useState(null);  // 현재 활성화된 인덱스를 저장
+    const [activeIndex, setActiveIndex] = useState(null);
+    const [isFixed, setIsFixed] = useState(false);
 
     const handleClick = (index) => {
-        setActiveIndex(index);  // 클릭한 항목의 인덱스를 active 상태로 설정
+        setActiveIndex(index);
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setIsFixed(true);
+            } else {
+                setIsFixed(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <Container>
+        <Container isFixed={isFixed}>
             <StyledNav>
                 {["최근이슈", "사회정보", "이달의 정보", "블로그"].map((item, index) => (
                     <NavItem
@@ -27,10 +44,15 @@ const Nav = () => {
 
 const Container = styled.div`
     flex: 1;
-`;
-
-const StyledNav = styled.div`
+    width: 100%;
+    background-color: #fff;
     border-top: 1px solid #D5D5D5;
+    position: ${({isFixed}) => (isFixed ? 'fixed' : 'relative')};
+    top: ${({isFixed}) => (isFixed ? '0' : 'auto')};
+    z-index: 1000;
+    transition: top 0.3s ease, background-color 0.3s ease;
+`;
+const StyledNav = styled.div`
     height: 70px;
     display: flex;
     align-items: center;
