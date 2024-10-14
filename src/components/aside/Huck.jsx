@@ -1,59 +1,40 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 const Huck = () => {
-    return (
+    return(
         <Container>
-            <StyledSection>
-                <SectionHeader>
-                    <Box>
-
-                    </Box>
-                    <Content>
-                        <SecondBox ></SecondBox>
-                        <ThBox></ThBox>
-                    </Content>
-                </SectionHeader>
-            </StyledSection>
+            <LeftBox>
+                <AisdeBox></AisdeBox>
+            </LeftBox>
+            <RightBox>
+                <FirstArticleBox></FirstArticleBox>
+                <SecondArticleBox></SecondArticleBox>
+            </RightBox>
         </Container>
-    );
-};
+    )
+}
 
 const Container = styled.div`
     flex: 1;
-`;
-const StyledSection = styled.section`
-    display: flex;
-    width: 80%;
-    margin: 0 auto;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    background-color: #EBEBEB;
+`;
+const LeftBox = styled.div`
+    width: 720px;
+    height: 700px;
     background-color: red;
 `;
-const SectionHeader = styled.div`
-    width: 100%;
+const AisdeBox = styled.div`
+
+`;
+const RightBox = styled.div`
+    width: 700px;
     height: 700px;
+    background-color: #87f;
 `;
-const Box = styled.div`
-    width: 60%;
-    background-color: #ededed;
-    height: 700px;
-    border-radius: 10px;
-`;
-const Content = styled.div`
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-`;
-const SecondBox = styled.div`
-    width: 65%;
-    height: 300px;
-    background-color: #3dd;
-    border-radius: 10px;
-`;
-const ThBox = styled.div`
-    width: 65%;
-    height: 400px;
-    background-color: #4eed;
-    border-radius: 10px;
-`;
+const FirstArticleBox = styled.article``;
+const SecondArticleBox = styled.article``;
 export default Huck;
