@@ -28,7 +28,7 @@ const Nav = () => {
     return (
         <Container isFixed={isFixed}>
             <StyledNav>
-                {["최근이슈", "사회정보", "이달의 정보", "블로그"].map((item, index) => (
+                {["최근이슈", "사회정보", "이달의 정보"].map((item, index) => (
                     <NavItem
                         key={index}
                         isActive={index === activeIndex}

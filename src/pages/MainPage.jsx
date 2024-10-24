@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import Logo from "../icon/Logo";
 import Nav from "../components/aside/Nav";
-import Huck from "../components/aside/Huck"
 const MainPage = () => {
     return(
         <Container>
@@ -15,7 +14,6 @@ const MainPage = () => {
                 </Content>
             </StyledHeader>
             <Nav />
-            <Huck />
         </Container>
     )
 }
