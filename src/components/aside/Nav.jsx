@@ -1,13 +1,24 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const Nav = () => {
+    const location = useLocation();
     const [activeIndex, setActiveIndex] = useState(null);
     const [isFixed, setIsFixed] = useState(false);
 
-    const handleClick = (index) => {
-        setActiveIndex(index);
-    };
+    const navItem =[
+        {name: "최근이슈", path: "/Issue"},
+        {name: "사회정보", path: "/social-info"},
+        {name: "이달의 정보", path: "/monthly-info"},
+    ]
+
+    useEffect(() => {
+        const currrentPath = location.pathname;
+        const currentIndex = navItem.findIndex(item => item.path === currrentPath);
+        setActiveIndex(currentIndex);
+    }, [location]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -28,13 +39,13 @@ const Nav = () => {
     return (
         <Container isFixed={isFixed}>
             <StyledNav>
-                {["최근이슈", "사회정보", "이달의 정보"].map((item, index) => (
+                {navItem.map((item, index) => (
                     <NavItem
                         key={index}
                         isActive={index === activeIndex}
-                        onClick={() => handleClick(index)}
+                        onClick={() => setActiveIndex(index)}
                     >
-                        {item}
+                        <StyledLink to={item.path}>{item.name}</StyledLink>
                     </NavItem>
                 ))}
             </StyledNav>
@@ -69,5 +80,8 @@ const NavItem = styled.div`
     text-decoration: ${({isActive}) => (isActive ? "underline" : "none")};
     text-decoration-color: ${({ isActive }) => (isActive ? "#1D99FF" : "transparent")};
 `;
-
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: inherit;
+`;
 export default Nav;
