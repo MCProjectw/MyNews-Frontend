@@ -20,6 +20,13 @@ const MainPage = () => {
                 <HighSchool>고등학생에게 필요한 정보들을 MyNews에서 한눈에 알아보세요. <br /> 고등학생이 알면 좋은 다양한 정보들을 제공해드리는 웹사이트 입니다</HighSchool>
                 <News to="/Issue">뉴스 보러 바로가기</News>
             </MainImages>
+            <Footer>
+                <Logo />
+                <FooterText>
+                    <EmailText>이메일 주소 개인정보 방침</EmailText>
+                    <DigitechText href="https://sdh.sen.hs.kr/78396/subMenu.do">서울 디지텍 고등학교 오시는 길</DigitechText>
+                </FooterText>
+            </Footer>
         </Container>
     )
 }
@@ -28,6 +35,30 @@ const MainPage = () => {
 const Container = styled.div`
     flex: 1;
     background-color: #fff;
+`;
+const Footer = styled.footer`
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #D4D4D4;
+`;
+
+const FooterText = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 120px;
+    line-height: 2rem;
+`;
+const EmailText = styled.div`
+    font-size: 25px;
+    font-weight: bold;
+`;
+const DigitechText = styled.a`
+    font-size: 23px;
+    font-weight: bold;
 `;
 const MyNews = styled.p`
     color: #fff;
