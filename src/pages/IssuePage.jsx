@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Nav from "../components/aside/Nav";
 import Logo from "../icon/Logo";
 import { Link } from "react-router-dom";
+import Weather from "../components/weather/WeatherAPI";
+import NewsList from "../components/weather/NewsList";
 
 const IssuePage = () => {
     return(
@@ -15,13 +17,16 @@ const IssuePage = () => {
                 </Content>
             </StyledHeader>
             <Nav />
+            <StyledWeatherContainer>
+                <Weather />
+            </StyledWeatherContainer>
+            <NewsList />
         </Container>
     )
 }
 
 const Container = styled.div`
     flex: 1;
-    background-color: #fff;
 `;
 const StyledHeader = styled.header`
     display: flex;
@@ -53,5 +58,10 @@ const RegisterBtn = styled(Link)`
     border-radius: 6px;
     color: #1D99FF;
     font-weight: bold;
+`;
+const StyledWeatherContainer = styled.div`
+    background-color: #fff;
+    width: 400px;
+    height: 100px;
 `;
 export default IssuePage;
