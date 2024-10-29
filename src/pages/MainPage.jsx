@@ -48,7 +48,7 @@ const FooterText = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 80%;
     height: 120px;
     line-height: 2rem;
 `;

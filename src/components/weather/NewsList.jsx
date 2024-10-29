@@ -24,19 +24,19 @@ const NewsList = () => {
     }, []);
     return(
         <Container>
-            <h1>고등학교 관련 뉴스</h1>
-            <ul>
+            <StyledNews>고등학교 관련 뉴스</StyledNews>
+            <NewsUl>
                 {highSchoolNews.map((news, idx) => (
-                    <li key={idx}><a href={news.link} rel="noopener noreferrer">{news.title}</a></li>
+                    <NewsLi key={idx}><a href={news.link} rel="noopener noreferrer">{news.title}</a></NewsLi>
                 ))}
-            </ul>
+            </NewsUl>
 
-            <h2>딥페이크 관련 뉴스</h2>
-            <ul>
+            <StyledNews>딥페이크 관련 뉴스</StyledNews>
+            <NewsUl>
                 {deepfakeNews.map((news, idx) => (
-                    <li key={idx}><a href={news.link} target="_blank" rel="noperner norerferrer">{news.title}</a></li>
+                    <NewsLi key={idx}><a href={news.link} target="_blank" rel="noperner norerferrer">{news.title}</a></NewsLi>
                 ))}
-            </ul>
+            </NewsUl>
         </Container>
     )
 }
@@ -44,4 +44,8 @@ const NewsList = () => {
 const Container = styled.div`
     flex: 1;
 `;
+
+const StyledNews = styled.h1``;
+const NewsUl = styled.ul``;
+const NewsLi = styled.li``;
 export default NewsList;
