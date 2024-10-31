@@ -48,15 +48,21 @@ const Weather = () => {
 
 const Container = styled.div`
     flex: 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    right: 0;
 `;
 const Btn = styled.div`
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    `;
+`;
 const StyledDl = styled.dl`
     display: flex;
-    font-size: 15px;
+    font-size: 16px;
     margin-top: 20px;
+    align-items: center;
+    font-weight: bold;
 `;
 export default Weather;

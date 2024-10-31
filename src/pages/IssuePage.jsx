@@ -6,27 +6,42 @@ import Weather from "../components/weather/WeatherAPI";
 import NewsList from "../components/weather/NewsList";
 
 const IssuePage = () => {
-    return(
+    return (
         <Container>
-            <StyledHeader>
-                <Logo />
-                <HeaderText>한국 고등학생을 위한 뉴스정보</HeaderText>
-                <Content>
-                    <LoginBtn to="/login">로그인</LoginBtn>
-                    <RegisterBtn to="/register">회원가입</RegisterBtn>
-                </Content>
-            </StyledHeader>
-            <Nav />
+            <Wrap>
+                <StyledHeader>
+                    <Logo />
+                    <HeaderText>한국 고등학생을 위한 뉴스정보</HeaderText>
+                    <Content>
+                        <LoginBtn to="/login">로그인</LoginBtn>
+                        <RegisterBtn to="/register">회원가입</RegisterBtn>
+                    </Content>
+                </StyledHeader>
+                <Nav />
+            </Wrap>
             <StyledWeatherContainer>
                 <Weather />
             </StyledWeatherContainer>
-            <NewsList />
+            <Box>
+                <NewsList />
+            </Box>
         </Container>
     )
 }
 
 const Container = styled.div`
     flex: 1;
+    // background-color: #fff;
+`;
+const Box = styled.div`
+    background-color: #fff;
+    width: 1396px;
+    height: 756px;
+    border-radius: 10px;
+    margin: 0 auto;
+`;
+const Wrap = styled.div`
+    background-color: #fff;
 `;
 const StyledHeader = styled.header`
     display: flex;
@@ -60,8 +75,12 @@ const RegisterBtn = styled(Link)`
     font-weight: bold;
 `;
 const StyledWeatherContainer = styled.div`
+    margin-top: 100px;
+    margin-bottom: 50px;
     background-color: #fff;
     width: 400px;
-    height: 100px;
+    height: 50px;
+    margin-left: 58.7%;
+    border-radius: 6px;
 `;
 export default IssuePage;

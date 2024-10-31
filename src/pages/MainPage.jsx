@@ -15,8 +15,9 @@ const MainPage = () => {
             </StyledHeader>
             <Nav />
             <MainImages>
-                <MyNews>My News</MyNews>
-                <Eyes>에서 한눈에</Eyes>
+                <MainText>
+                    <MyNews>My News에서 한눈에</MyNews>
+                </MainText>
                 <HighSchool>고등학생에게 필요한 정보들을 MyNews에서 한눈에 알아보세요. <br /> 고등학생이 알면 좋은 다양한 정보들을 제공해드리는 웹사이트 입니다</HighSchool>
                 <News to="/Issue">뉴스 보러 바로가기</News>
             </MainImages>
@@ -52,6 +53,11 @@ const FooterText = styled.div`
     height: 120px;
     line-height: 2rem;
 `;
+const MainText = styled.div`
+    position: absolute;
+    left: 10%;
+    top: 40%;
+`;
 const EmailText = styled.div`
     font-size: 25px;
     font-weight: bold;
@@ -62,20 +68,9 @@ const DigitechText = styled.a`
 `;
 const MyNews = styled.p`
     color: #fff;
-    position: absolute;
-    font-size: 6em;
-    left: 10%;
-    top: 40%;
+    font-size: 6rem;
     font-weight: bold;
 `
-const Eyes = styled.p`
-    color: #fff;
-    position: absolute;
-    font-size: 2.5rem;
-    left: 32.5%;
-    top: 46%;
-    font-weight: bold;
-`;
 const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
