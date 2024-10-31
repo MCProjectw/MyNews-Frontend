@@ -75,12 +75,12 @@ const RegisterBtn = styled(Link)`
     font-weight: bold;
 `;
 const StyledWeatherContainer = styled.div`
-    margin-top: 100px;
+    margin-top: 150px;
     margin-bottom: 50px;
     background-color: #fff;
     width: 400px;
     height: 50px;
-    margin-left: 58.7%;
     border-radius: 6px;
+    margin-left: 65%;
 `;
 export default IssuePage;

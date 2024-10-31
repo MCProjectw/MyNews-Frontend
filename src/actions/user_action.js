@@ -55,7 +55,7 @@ export const loginUser = (dataToSubmit) => {
             // 로그인 성공 시 Redux store에 사용자 정보 저장
             dispatch({
                 type: LOGIN_USER,
-                payload: data,
+                payload: {token: data.token, user: data.user},
             });
 
             return data;
